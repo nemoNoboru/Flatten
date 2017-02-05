@@ -1,0 +1,54 @@
+<div ng-controller='loginCtrl as $ctrl'>
+<section class="wrapper style1 align-left" >
+  <div class="inner">
+    <header>
+      <h1>Flatten!</h1>
+      <p>Creating a new task</p>
+    </header>
+    <div class="row">
+      <div class="6u align-center">
+        <h2>Creating</h2>
+        <div class="row">
+          <div class="cfield 12u">
+            <input placeholder='Title' type="text" ng-model='task.title'>
+          </div>
+          <div class="cfield 12u">
+            <input placeholder='Short description' type="text" ng-model='task.shortDescription'>
+          </div>
+          <div class="cfield 12u">
+            <textarea placeholder='Description' type="text" ng-model='task.description'></textarea>
+          </div>
+
+            <div class="cfield 8u">
+              <input placeholder='Tag' type="text" ng-model='activetag'>
+            </div>
+            <div class="cfield 2u">
+              <button ng-click='task.tags.push(activetag)'>Add tag</button>
+            </div>
+
+        </div>
+        <button class="wide">Create</button>
+      </div>
+      <div class="6u align-left">
+        <h2>Condensed preview</h2>
+        <div class="box">
+          <h3>{{task.title}}</h3>
+          <p>{{task.shortDescription}}</p>
+          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrapper style1 align-left">
+  <div class="inner">
+    <h1>Full preview</h1>
+    <hr/>
+    <h1>{{task.title}}</h1>
+    <p> {{task.description}} </p>
+    <p class="planned_by">Planned by: {{task.planned}}</p>
+    <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+  </div>
+</section>
+</div>

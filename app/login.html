@@ -1,0 +1,19 @@
+<section class="wrapper style1 align-left" ng-controller='loginCtrl as $ctrl'>
+  <div class="inner">
+    <header>
+      <h1>Flatten!</h1>
+    </header>
+    <div class="row">
+      <div class="cfield 12u">
+        <input placeholder='EMAIL' type="email" ng-model='email'>
+      </div>
+      <div class="cfield 12u">
+        <input placeholder='PASSWORD' type="password" ng-model='pass'>
+      </div>
+      <div class="cfield 12u align-center">
+        <p class="error">{{error}}</p>
+        <button ng-click='login()'>Login</button>
+      </div>
+    </div>
+  </div>
+</section>

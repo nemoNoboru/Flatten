@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Flatten!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/flatten.css" />
+	</head>
+	<body ng-app='flatten'>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+				<ng-view></ng-view>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+			<script>
+				// Initialize Firebase
+				var config = {
+				  apiKey: "AIzaSyAcS3K_3d2ypyPXUGmM_scOEcH7bF97bh8",
+				  authDomain: "flatten-fb62d.firebaseapp.com",
+				  databaseURL: "https://flatten-fb62d.firebaseio.com",
+				  storageBucket: "flatten-fb62d.appspot.com",
+				  messagingSenderId: "119562224433"
+				};
+				firebase.initializeApp(config);
+			</script>
+			<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="core/flatten.js"></script>
+			<script src="core/login.js"></script>
+			
+
+	</body>
+</html>

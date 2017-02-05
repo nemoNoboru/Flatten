@@ -1,0 +1,48 @@
+<section class="wrapper style1 align-left" ng-controller='loginCtrl as $ctrl'>
+  <div class="inner">
+    <header>
+      <h1>Flatten!</h1>
+      <p>working on {{active_proyect}}</p>
+    </header>
+    <div class="row">
+      <div class="4u align-center">
+        <h2>Planning</h2>
+        <div class="box" ng-repeat='task in tasks_planning'>
+          <h3>{{task.title}}</h3>
+          <p>{{task.shortDescription}}</p>
+          <p class="planned_by">{{task.planned}}</p>
+          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+        </div>
+        <a href="#new" class="button wide">new task</a>
+      </div>
+      <div class="4u align-center">
+        <h2>Doing</h2>
+        <div class="box" ng-repeat='task in tasks_doing'>
+          <h3>{{task.title}}</h3>
+          <p>{{task.shortDescription}}</p>
+          <p class="planned_by">{{task.planned}}</p>
+          <p class="doing_by">{{task.doing}}</p>
+          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+        </div>
+      </div>
+      <div class="4u align-center">
+        <h2>Done</h2>
+        <div class="box" ng-repeat='task in tasks_done'>
+          <h3>{{task.title}}</h3>
+          <p>{{task.shortDescription}}</p>
+          <p class="planned_by">{{task.planned}}</p>
+          <p class="doing_by">{{task.doing}}</p>
+          <p class="done_by">{{task.done}}</p>
+          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrapper style1 align-left">
+<div class="inner">
+  <h2>Pick a proyect to work into<h2>
+    <button class="small" ng-repeat='proyect in proyects'>{{proyect.name}}</button>
+</div>
+</section>
