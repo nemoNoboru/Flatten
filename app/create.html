@@ -1,4 +1,4 @@
-<div ng-controller='loginCtrl as $ctrl'>
+<div ng-controller='createCtrl as $ctrl'>
 <section class="wrapper style1 align-left" >
   <div class="inner">
     <header>
@@ -27,14 +27,14 @@
             </div>
 
         </div>
-        <button class="wide">Create</button>
+        <button ng-click='push()' class="wide">Create</button>
       </div>
       <div class="6u align-left">
         <h2>Condensed preview</h2>
         <div class="box">
           <h3>{{task.title}}</h3>
           <p>{{task.shortDescription}}</p>
-          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+          <span class="tags" ng-repeat='tag in task.tags'>{{tag}}<span>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
     <h1>{{task.title}}</h1>
     <p> {{task.description}} </p>
     <p class="planned_by">Planned by: {{task.planned}}</p>
-    <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+    <span class="tags" ng-repeat='tag in task.tags'>{{tag}}<span>
   </div>
 </section>
 </div>

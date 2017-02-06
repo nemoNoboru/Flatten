@@ -1,4 +1,4 @@
-<section class="wrapper style1 align-left" ng-controller='loginCtrl as $ctrl'>
+<section class="wrapper style1 align-left" ng-controller='kanbanCtrl as $ctrl'>
   <div class="inner">
     <header>
       <h1>Flatten!</h1>
@@ -10,19 +10,23 @@
         <div class="box" ng-repeat='task in tasks_planning'>
           <h3>{{task.title}}</h3>
           <p>{{task.shortDescription}}</p>
-          <p class="planned_by">{{task.planned}}</p>
-          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+          <p class="planned_by">Planned by: {{task.planned}}</p>
+          <span class="tags" ng-repeat='tag in task.tags'>{{tag}}</span>
+          <button ng-click='trashPlanning(task)'>Oops!</button>
+          <button ng-click='changeToDoing(task)'>Do this</button>
         </div>
-        <a href="#new" class="button wide">new task</a>
+        <a href="#!new" class="button wide">new task</a>
       </div>
       <div class="4u align-center">
         <h2>Doing</h2>
         <div class="box" ng-repeat='task in tasks_doing'>
           <h3>{{task.title}}</h3>
           <p>{{task.shortDescription}}</p>
-          <p class="planned_by">{{task.planned}}</p>
-          <p class="doing_by">{{task.doing}}</p>
-          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+          <p class="planned_by">Planned by: {{task.planned}}</p>
+          <p class="doing_by">Doing by: {{task.doing}}</p>
+          <span class="tags" ng-repeat='tag in task.tags'>{{tag}}</span>
+          <button ng-click='backToPlanning(task)'>Oops!</button>
+          <button ng-click='changeToDone(task)'>Finished</button>
         </div>
       </div>
       <div class="4u align-center">
@@ -30,19 +34,14 @@
         <div class="box" ng-repeat='task in tasks_done'>
           <h3>{{task.title}}</h3>
           <p>{{task.shortDescription}}</p>
-          <p class="planned_by">{{task.planned}}</p>
-          <p class="doing_by">{{task.doing}}</p>
-          <p class="done_by">{{task.done}}</p>
-          <p class="tags" ng-repeat='tag in task.tags'>{{tag}}<p>
+          <p class="planned_by">Planning by: {{task.planned}}</p>
+          <p class="doing_by">Doing by: {{task.doing}}</p>
+          <p class="done_by">Done by: {{task.done}}</p>
+          <span class="tags" ng-repeat='tag in task.tags'>{{tag}}</span>
+          <button ng-click='backToDoing(task)'>Oops!</button>
+          <button ng-click='trash(task)'>Trash</button>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<section class="wrapper style1 align-left">
-<div class="inner">
-  <h2>Pick a proyect to work into<h2>
-    <button class="small" ng-repeat='proyect in proyects'>{{proyect.name}}</button>
-</div>
 </section>

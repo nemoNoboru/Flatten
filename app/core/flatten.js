@@ -1,4 +1,4 @@
-var app = angular.module('flatten',['ngAnimate','ngRoute','firebase'])
+var app = angular.module('flatten',['ngAnimate','ngRoute','firebase','ngDragDrop'])
 
 app.run(["$rootScope", "$location", function($rootScope, $location) {
   $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
